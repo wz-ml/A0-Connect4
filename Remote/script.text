@@ -1,0 +1,13 @@
+sudo apt update
+sudo apt install python3 -y
+sudo apt install pip -y 
+sudo apt install graphviz -y
+pip install -r requirements.txt
+jupyter notebook --generate-config
+sudo apt install apache2 -y
+ufw allow OpenSSH
+ufw enable
+
+From new instance:
+ssh -L 8000:localhost:8888 user@your_server_ip
+jupyter notebook

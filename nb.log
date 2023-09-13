@@ -1,0 +1,27 @@
+Autosaving every 5 seconds
+Usage stats collection is enabled by default for nightly wheels. To disable this, run the following command: `ray disable-usage-stats` before starting Ray. See https://docs.ray.io/en/master/cluster/usage-stats.html for more details.
+2022-11-08 17:27:49,558	INFO worker.py:1537 -- Started a local Ray instance.
+Exception in thread ray_listen_error_messages:
+Traceback (most recent call last):
+  File "C:\Python310\lib\threading.py", line 1009, in _bootstrap_inner
+2022-11-08 17:27:59,414	ERROR import_thread.py:75 -- ImportThread: <_MultiThreadedRendezvous of RPC that terminated with:
+	status = StatusCode.UNKNOWN
+	details = "Stream removed"
+	debug_error_string = "UNKNOWN:Error received from peer ipv4:127.0.0.1:64797 {created_time:"2022-11-09T01:27:59.283702814+00:00", grpc_status:2, grpc_message:"Stream removed"}"
+>
+    self.run()
+  File "C:\Python310\lib\threading.py", line 946, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\william\AppData\Roaming\Python\Python310\site-packages\ray\_private\worker.py", line 1834, in listen_error_messages
+    _, error_data = worker.gcs_error_subscriber.poll()
+  File "C:\Users\william\AppData\Roaming\Python\Python310\site-packages\ray\_private\gcs_pubsub.py", line 317, in poll
+    self._poll_locked(timeout=timeout)
+  File "C:\Users\william\AppData\Roaming\Python\Python310\site-packages\ray\_private\gcs_pubsub.py", line 249, in _poll_locked
+    fut.result(timeout=1)
+  File "C:\Python310\lib\site-packages\grpc\_channel.py", line 744, in result
+    raise self
+grpc._channel._MultiThreadedRendezvous: <_MultiThreadedRendezvous of RPC that terminated with:
+	status = StatusCode.UNKNOWN
+	details = "Stream removed"
+	debug_error_string = "UNKNOWN:Error received from peer ipv4:127.0.0.1:64797 {grpc_message:"Stream removed", grpc_status:2, created_time:"2022-11-09T01:27:59.28346423+00:00"}"
+>

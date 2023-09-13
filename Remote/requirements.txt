@@ -1,0 +1,15 @@
+jupyter
+tensorflow
+keras
+numpy
+pandas
+scipy
+pillow
+tqdm
+plotly
+matplotlib
+seaborn
+tensorboard
+pydot
+graphviz
+ray
